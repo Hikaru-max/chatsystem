@@ -1,0 +1,15 @@
+<% if logged_in? %>
+  <p>ログイン中のユーザ： <%= current_user.idpass %></p>
+  <div class="text-center">
+    <%= link_to 'ChatSystem', posts_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+<% else %>
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>院内チャットシステム</h1>
+  </div>
+</div>
+ <div class="text-center">
+    <%= link_to 'ChatSystemを起動', login_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+<% end %>
