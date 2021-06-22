@@ -21,6 +21,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       importance_class = "importance-work"
       
     $('#posts').append "<li class=\"post #{importance_class}\">#{data['id']} : #{data['content']}</li>"  #index.html.erbに挿入された時に見た目が一緒になるようにしている、ulにid=chatsを指定している。
+#""の中に""を入れたい場合は\"\"を使う。ここができていなかったからruntime errorが出た。
 
   speak: (post, importance) ->
     console.log("speak")    
@@ -33,4 +34,4 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       event.target.value = ''
       event.preventDefault()
       
-      #input type=hiden value="current_user-id"
+      
